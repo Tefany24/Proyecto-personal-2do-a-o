@@ -40,7 +40,7 @@ def ver_pedido(pedido):
     else:
         print("\nNo has agregado ningún platillo a tu pedido.")
 
-# Función para finalizar el pedido y calcular el total
+        # Función para finalizar el pedido y calcular el total
 def finalizar_pedido(pedido):
     if pedido:
         total = sum(platillo['precio'] for platillo in pedido)
