@@ -15,7 +15,7 @@ def mostrar_menu():
     for i, platillo in enumerate(menu):
         print(f"{i + 1}. {platillo['nombre']} - ${platillo['precio']}")
 
-        # Función para agregar un platillo al pedido
+# Función para agregar un platillo al pedido
 def agregar_pedido(pedido):
     mostrar_menu()
     try:
@@ -27,3 +27,31 @@ def agregar_pedido(pedido):
             print("Opción no válida.")
     except ValueError:
         print("Por favor, ingresa un número válido.")
+
+# Función para ver el pedido actual
+def ver_pedido(pedido):
+    if pedido:
+        print("\nTu pedido actual:")
+        total = 0
+        for platillo in pedido:
+            print(f"{platillo['nombre']} - ${platillo['precio']}")
+            total += platillo['precio']
+        print(f"Total del pedido: ${total}")
+    else:
+        print("\nNo has agregado ningún platillo a tu pedido.")
+
+# Función para finalizar el pedido y calcular el total
+def finalizar_pedido(pedido):
+    if pedido:
+        total = sum(platillo['precio'] for platillo in pedido)
+        print(f"\nEl total de tu pedido es: ${total}")
+        confirmar = input("¿Quieres confirmar el pedido? (sí/no): ").lower()
+        if confirmar == 'sí':
+            print("¡Pedido confirmado! ¡Gracias por tu compra!")
+            return True
+        else:
+            print("Pedido no confirmado.")
+            return False
+    else:
+        print("\nNo tienes ningún platillo en tu pedido.")
+        return False
