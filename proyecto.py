@@ -40,7 +40,7 @@ def ver_pedido(pedido):
     else:
         print("\nNo has agregado ningún platillo a tu pedido.")
 
-        # Función para finalizar el pedido y calcular el total
+# Función para finalizar el pedido y calcular el total
 def finalizar_pedido(pedido):
     if pedido:
         total = sum(platillo['precio'] for platillo in pedido)
@@ -56,10 +56,37 @@ def finalizar_pedido(pedido):
         print("\nNo tienes ningún platillo en tu pedido.")
         return False
 
-        #Menú interactivo
+#Menú interactivo
 def mostrar_menú_principal():
     print("\n----Simulador de Pedidos de Restaurante----")
     print("1.Ver menú y hacer pedido.")
     print("2.Ver pedido actual.")
     print("3.finalizar pedido.")
     print("4.Salir.")
+
+# Función principal para ejecutar el simulador de pedidos
+def ejecutar_simulador():
+    pedido = []
+    while True:
+        mostrar_menú_principal()
+        try:
+            opcion = int(input("\nSelecciona una opción: "))
+            if opcion == 1:
+                agregar_pedido(pedido)
+            elif opcion == 2:
+                ver_pedido(pedido)
+            elif opcion == 3:
+                if finalizar_pedido(pedido):
+                    break
+            elif opcion == 4:
+                print("Gracias por usar el simulador. ¡Hasta luego!")
+                break
+            else:
+                print("Opción no válida.")
+        except ValueError:
+            print("Por favor, ingresa un número válido.")
+ 
+# Ejecutar el simulador
+ejecutar_simulador()
+
+
