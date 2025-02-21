@@ -55,3 +55,11 @@ def finalizar_pedido(pedido):
     else:
         print("\nNo tienes ningún platillo en tu pedido.")
         return False
+
+        #Menú interactivo
+def mostrar_menú_principal():
+    print("\n----Simulador de Pedidos de Restaurante----")
+    print("1.Ver menú y hacer pedido.")
+    print("2.Ver pedido actual.")
+    print("3.finalizar pedido.")
+    print("4.Salir.")
