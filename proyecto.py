@@ -1,4 +1,4 @@
-# Definición de funciones
+# Simulador de Pedidos de un Restaurante
 
 # Menú del restaurante con platillos y precios
 menu = [
@@ -47,7 +47,7 @@ def finalizar_pedido(pedido):
         print(f"\nEl total de tu pedido es: ${total}")
         confirmar = input("¿Quieres confirmar el pedido? (sí/no): ").lower()
         if confirmar == 'sí':
-            print("¡Pedido confirmado! ¡Gracias por tu compra!")
+            print("¡Pedido confirmado! ¡Gracias por tu compra!😊")
             return True
         else:
             print("Pedido no confirmado.")
@@ -79,7 +79,7 @@ def ejecutar_simulador():
                 if finalizar_pedido(pedido):
                     break
             elif opcion == 4:
-                print("Gracias por usar el simulador. ¡Hasta luego!")
+                print("Gracias por usar el simulador. ¡Hasta luego!🤗")
                 break
             else:
                 print("Opción no válida.")
